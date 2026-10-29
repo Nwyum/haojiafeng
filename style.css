@@ -412,33 +412,19 @@ a { text-decoration: none; color: inherit; }
 .story-info p { font-size: 14px; color: var(--text-light); text-align: justify; }
 
 /* ============ 家风影像（视频） ============ */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.video-card {
-  background: #fff;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: transform .3s, box-shadow .3s;
-}
-
-.video-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 34px rgba(143,43,37,.18);
-}
-
-.video-wrap {
+.player-main {
   position: relative;
+  max-width: 860px;
+  margin: 0 auto;
   aspect-ratio: 16 / 9;
   background: var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(43,35,32,.28);
+  border: 3px solid rgba(201,160,99,.5);
 }
 
-.video-wrap video,
-.video-wrap iframe {
+.player-main iframe {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -447,23 +433,88 @@ a { text-decoration: none; color: inherit; }
   display: block;
 }
 
-.video-info { padding: 18px 20px 22px; }
-
-.video-info h3 {
-  color: var(--ink);
-  font-size: 17px;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+.player-caption {
+  text-align: center;
+  color: var(--red-deep);
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 16px 0 34px;
+  font-weight: 600;
 }
 
-.video-info p { font-size: 14px; color: var(--text-light); }
+.video-list {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
 
-.video-info code {
-  background: var(--paper-alt);
-  padding: 2px 8px;
-  border-radius: 6px;
+.video-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 2px solid rgba(201,160,99,.35);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+
+.video-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--red);
+  box-shadow: 0 10px 22px rgba(143,43,37,.14);
+}
+
+.video-item.active {
+  border-color: var(--red);
+  background: linear-gradient(135deg, #fff, #fdf0ec);
+}
+
+.video-num {
+  flex: none;
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(185,58,50,.08);
+  color: var(--red);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.video-item.active .video-num {
+  background: var(--red);
+  color: #fff;
+}
+
+.video-text h3 {
+  font-size: 15px;
+  color: var(--ink);
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.video-text p {
   font-size: 13px;
-  color: var(--red-deep);
+  color: var(--text-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-badge {
+  flex: none;
+  margin-left: auto;
+  font-size: 12px;
+  color: #fff;
+  background: var(--red);
+  border-radius: 999px;
+  padding: 2px 12px;
+  letter-spacing: 1px;
 }
 
 /* ============ 每日家训 ============ */
@@ -679,6 +730,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ============ 响应式 ============ */
 @media (max-width: 768px) {
+  .video-list { grid-template-columns: 1fr; }
   .nav-links {
     position: absolute;
     top: 64px;

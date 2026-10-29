@@ -129,7 +129,7 @@ drawBtn.addEventListener("click", () => {
 
 /* ---------- 4. 滚动进场动画 ---------- */
 const revealTargets = document.querySelectorAll(
-  ".intro-card, .motto-card, .story-card, .video-card, .daily-box, .tabs, .ending-inner, .section-title, .section-sub"
+  ".intro-card, .motto-card, .story-card, .player-main, .video-item, .daily-box, .tabs, .ending-inner, .section-title, .section-sub"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));
@@ -147,6 +147,71 @@ const io = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => io.observe(el));
+
+/* ---------- 5. 家风影像：主播放器 + 待播列表 ---------- */
+// 换视频 / 加视频：直接改这个数组（BV 号在B站「分享 → 嵌入代码」里可以找到）
+const videos = [
+  {
+    bvid: "BV1qW411V7rC",
+    title: "央视纪录片《家风》全 2 集",
+    desc: "国内第一部系统阐述家风的纪录片，从《颜氏家训》《朱子家训》讲到钱氏家族。",
+  },
+  {
+    bvid: "BV1QYS8YiExh",
+    title: "微电影《家训八十》",
+    desc: "全国高校大学生微电影参赛作品，大学生探寻家训传承的故事。",
+  },
+  {
+    bvid: "BV1Gx411D7AB",
+    title: "央视纪录片《齐鲁家风》",
+    desc: "央视《探索发现》六集超清纪录片，讲述孔孟之乡传承千年的家风故事。",
+  },
+  {
+    bvid: "BV1rhpu6pE37",
+    title: "央视纪录片《守望家风》",
+    desc: "五集文献纪录片之「善·仁」，以真实人物故事诠释家风内涵。",
+  },
+];
+
+const mainPlayer = document.getElementById("mainPlayer");
+const playerCaption = document.getElementById("playerCaption");
+const videoList = document.getElementById("videoList");
+
+function playerUrl(bvid, autoplay) {
+  return `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&high_quality=1&danmaku=0&autoplay=${autoplay}`;
+}
+
+// 生成待播列表
+videos.forEach((v, i) => {
+  const item = document.createElement("div");
+  item.className = "video-item" + (i === 0 ? " active" : "");
+  item.innerHTML = `
+    <span class="video-num">${i + 1}</span>
+    <div class="video-text">
+      <h3>${v.title}</h3>
+      <p>${v.desc}</p>
+    </div>
+    <span class="video-badge" ${i === 0 ? "" : "hidden"}>播放中</span>
+  `;
+  item.addEventListener("click", () => selectVideo(i));
+  videoList.appendChild(item);
+});
+
+function selectVideo(index) {
+  // 只有一个主播放器：切换视频 = 替换主播放器地址，上一个自然停止
+  mainPlayer.src = playerUrl(videos[index].bvid, 1); // autoplay=1 装入即播
+  playerCaption.textContent = `正在播放：${videos[index].title}`;
+
+  document.querySelectorAll(".video-item").forEach((item, i) => {
+    item.classList.toggle("active", i === index);
+    item.querySelector(".video-badge").hidden = i !== index;
+  });
+
+  // 手机上选片后自动滚到主播放器
+  if (window.innerWidth < 768) {
+    document.getElementById("playerMain").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 /* ---------- 6. 飘落花瓣背景动画 ---------- */
 const canvas = document.getElementById("petals");

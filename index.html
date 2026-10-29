@@ -201,37 +201,17 @@
     <div class="container">
       <h2 class="section-title">家风影像</h2>
       <p class="section-sub">Family Videos</p>
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-wrap">
-            <!--
-              换成自己的视频：把下面 source 的 src 换成视频文件地址
-              （可以是网上 .mp4 链接，或与网页同目录的本地视频文件）
-            -->
-            <video controls preload="metadata"
-              src="https://www.w3schools.com/html/mov_bbb.mp4">
-              您的浏览器不支持视频播放
-            </video>
-          </div>
-          <div class="video-info">
-            <h3>在线视频 · 直接播放</h3>
-            <p>支持所有常见格式的在线 / 本地 MP4 视频。</p>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-wrap">
-            <!--
-              换成自己的B站视频：在B站视频页点「分享 → 嵌入代码」，
-              复制其中的 BV 号替换下面链接里的 bvid=BV1GJ411x7h7 即可
-            -->
-            <iframe src="https://player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1&high_quality=1&danmaku=0&autoplay=0"
-              scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-          </div>
-          <div class="video-info">
-            <h3>B站视频 · 嵌入播放</h3>
-            <p>替换 BV 号即可嵌入任意B站视频，自动适配清晰度。</p>
-          </div>
-        </div>
+      <!-- 主播放器 -->
+      <div class="player-main reveal" id="playerMain">
+        <iframe id="mainPlayer"
+          src="https://player.bilibili.com/player.html?bvid=BV1qW411V7rC&page=1&high_quality=1&danmaku=0&autoplay=0"
+          scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+      </div>
+      <p class="player-caption" id="playerCaption">正在播放：央视纪录片《家风》全 2 集</p>
+
+      <!-- 待播列表 -->
+      <div class="video-list" id="videoList">
+        <!-- 视频列表由 script.js 动态生成，换视频只需改 script.js 顶部的 videos 数组 -->
       </div>
     </div>
   </section>
