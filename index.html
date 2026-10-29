@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>好家风好家训 · 传承中华优秀家庭文化</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-seal">家</span>
+        <span class="logo-text">好家风 · 好家训</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">首页</a>
+        <a href="#motto">家训名言</a>
+        <a href="#classic">名人家训</a>
+        <a href="#stories">家风典故</a>
+        <a href="#daily">每日家训</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-deco deco-1"></div>
+    <div class="hero-deco deco-2"></div>
+    <div class="hero-content container">
+      <p class="hero-sub">家风正 · 民风淳 · 国风清</p>
+      <h1 class="hero-title">好家风 &nbsp;好家训</h1>
+      <p class="hero-desc">
+        家风，是一个家庭的精神底色；家训，是一个家族的立身之本。<br />
+        从《颜氏家训》到《朱子家训》，从《曾国藩家书》到《傅雷家书》——<br />
+        千百年来，中华民族把最深沉的教诲，写在了一代代人的血脉里。
+      </p>
+      <div class="hero-btns">
+        <a href="#motto" class="btn btn-primary">品读家训</a>
+        <a href="#daily" class="btn btn-ghost">抽取今日家训</a>
+      </div>
+      <div class="hero-slogan">
+        <span>忠厚传家久</span>
+        <i></i>
+        <span>诗书继世长</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 什么是家风家训 -->
+  <section class="section" id="intro">
+    <div class="container">
+      <h2 class="section-title">何谓家风家训</h2>
+      <p class="section-sub">What Is Family Tradition</p>
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="intro-icon">🧭</div>
+          <h3>家风</h3>
+          <p>又称门风，是一个家庭或家族世代相传的风尚与作风。它看不见摸不着，却体现在长辈的言传身教、家人的日用伦常之中，是融入血脉的价值准则。</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon">📜</div>
+          <h3>家训</h3>
+          <p>是长辈对子孙立身处世、持家治业的教诲与训诫。或寥寥数语悬于中堂，或洋洋万言著成家书，凝聚着前人最珍贵的人生智慧。</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon">🌱</div>
+          <h3>传承</h3>
+          <p>"天下之本在国，国之本在家。"好家风好家训不仅滋养一个家庭，更汇入整个民族的精神长河，是社会主义核心价值观的深厚土壤。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家训名言 -->
+  <section class="section section-alt" id="motto">
+    <div class="container">
+      <h2 class="section-title">家训名言</h2>
+      <p class="section-sub">Classic Mottos</p>
+      <div class="motto-grid">
+        <div class="motto-card">
+          <p class="motto-text">一粥一饭，当思来处不易；半丝半缕，恒念物力维艰。</p>
+          <p class="motto-from">—— 朱柏庐《朱子家训》</p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">积善之家，必有余庆；积不善之家，必有余殃。</p>
+          <p class="motto-from">—— 《周易·坤卦》</p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。</p>
+          <p class="motto-from">—— 诸葛亮《诫子书》</p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">玉不琢，不成器；人不学，不知道。</p>
+          <p class="motto-from">—— 《礼记·学记》</p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">由俭入奢易，由奢入俭难。</p>
+          <p class="motto-from">—— 司马光《训俭示康》</p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">子孙若如我，留钱做什么？子孙不如我，留钱做什么？</p>
+          <p class="motto-from">—— 林则徐家训</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 名人家训（标签页） -->
+  <section class="section" id="classic">
+    <div class="container">
+      <h2 class="section-title">名人家训</h2>
+      <p class="section-sub">Famous Family Instructions</p>
+      <div class="tabs" id="tabs">
+        <div class="tab-btns" id="tabBtns">
+          <button class="tab-btn active" data-tab="0">颜氏家训</button>
+          <button class="tab-btn" data-tab="1">朱子家训</button>
+          <button class="tab-btn" data-tab="2">曾国藩家书</button>
+          <button class="tab-btn" data-tab="3">钱氏家训</button>
+          <button class="tab-btn" data-tab="4">傅雷家书</button>
+        </div>
+        <div class="tab-panels" id="tabPanels"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家风典故 -->
+  <section class="section section-alt" id="stories">
+    <div class="container">
+      <h2 class="section-title">家风典故</h2>
+      <p class="section-sub">Timeless Stories</p>
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-cover story-c1">孟</div>
+          <div class="story-info">
+            <h3>孟母三迁</h3>
+            <p>孟子幼时，孟母为择良邻三迁其居。"近朱者赤，近墨者黑"，环境育人，用心良苦，终成就一代亚圣。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c2">猪</div>
+          <div class="story-info">
+            <h3>曾子杀猪</h3>
+            <p>妻子随口哄孩子"回来杀猪给你吃"，曾子果真杀猪践诺。言出必行，身教重于言教，诚信之训由此立。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c3">字</div>
+          <div class="story-info">
+            <h3>岳母刺字</h3>
+            <p>岳母在岳飞背上刺"精忠报国"四字，把家国之训刻进骨血。一腔忠勇，千古流芳。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c4">俭</div>
+          <div class="story-info">
+            <h3>司马光教子节俭</h3>
+            <p>司马光写下《训俭示康》告诫儿子："由俭入奢易，由奢入俭难。"司马康谨守父训，一生以清廉闻名。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日家训（互动） -->
+  <section class="section" id="daily">
+    <div class="container">
+      <h2 class="section-title">每日家训</h2>
+      <p class="section-sub">Daily Precept</p>
+      <div class="daily-box">
+        <div class="daily-card" id="dailyCard">
+          <p class="daily-text" id="dailyText">点击下方按钮，抽取一句今日家训</p>
+          <p class="daily-from" id="dailyFrom">—— 好 · 家 · 风</p>
+        </div>
+        <button class="btn btn-primary" id="drawBtn">抽一句家训</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 结语 -->
+  <section class="section section-alt" id="ending">
+    <div class="container ending-inner">
+      <h2>家风如春雨，润物细无声</h2>
+      <p>
+        一句家训，可以照亮一个孩子的一生；一户好家风，可以影响一座村庄、一所学校、一个时代。<br />
+        愿每一个家庭都把最珍贵的东西传下去——不是财富，而是品格；不是遗产，而是家风。
+      </p>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-slogan">家风正，则民风淳；民风淳，则社风清。</p>
+      <p>好家风好家训 · 传承中华优秀家庭文化</p>
+      <p>© 2026 · 26级计算机科学专升本2班</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
