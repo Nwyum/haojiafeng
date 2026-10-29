@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>好家风好家训 · 传承中华优秀家庭文化</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 飘落花瓣背景 -->
+  <canvas id="petals"></canvas>
+
+  <!-- 顶部导航 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-seal">家</span>
+        <span class="logo-text">好家风 · 好家训</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">首页</a>
+        <a href="#motto">家训名言</a>
+        <a href="#classic">名人家训</a>
+        <a href="#stories">家风典故</a>
+        <a href="#video">家风影像</a>
+        <a href="#daily">每日家训</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-deco deco-1"></div>
+    <div class="hero-deco deco-2"></div>
+    <div class="hero-content container">
+      <p class="hero-sub">家风正 · 民风淳 · 国风清</p>
+      <h1 class="hero-title">好家风 &nbsp;好家训</h1>
+      <p class="hero-desc">
+        家风，是一个家庭的精神底色；家训，是一个家族的立身之本。<br />
+        从《颜氏家训》到《朱子家训》，从《曾国藩家书》到《傅雷家书》——<br />
+        千百年来，中华民族把最深沉的教诲，写在了一代代人的血脉里。
+      </p>
+      <div class="hero-btns">
+        <a href="#motto" class="btn btn-primary">品读家训</a>
+        <a href="#daily" class="btn btn-ghost">抽取今日家训</a>
+      </div>
+      <div class="hero-slogan">
+        <span>忠厚传家久</span>
+        <i></i>
+        <span>诗书继世长</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 什么是家风家训 -->
+  <!-- 数字动态统计 -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <b class="stat-num" data-target="2500">0</b>
+          <span class="stat-unit">年+</span>
+          <p>家文化传承历史</p>
+        </div>
+        <div class="stat-item">
+          <b class="stat-num" data-target="180">0</b>
+          <span class="stat-unit">部+</span>
+          <p>传世家训典籍</p>
+        </div>
+        <div class="stat-item">
+          <b class="stat-num" data-target="522">0</b>
+          <span class="stat-unit">字</span>
+          <p>《朱子家训》全文精炼</p>
+        </div>
+        <div class="stat-item">
+          <b class="stat-num" data-target="15">0</b>
+          <span class="stat-unit">句</span>
+          <p>精选家训任你抽</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="intro">
+    <div class="container">
+      <h2 class="section-title">何谓家风家训</h2>
+      <p class="section-sub">What Is Family Tradition</p>
+      <div class="intro-grid">
+        <div class="intro-card">
+          <div class="intro-icon">🧭</div>
+          <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%AE%B6%E9%A3%8E" target="_blank" rel="noopener">家风 ↗</a></h3>
+          <p>又称门风，是一个家庭或家族世代相传的风尚与作风。它看不见摸不着，却体现在长辈的言传身教、家人的日用伦常之中，是融入血脉的价值准则。</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon">📜</div>
+          <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%AE%B6%E8%AE%AD" target="_blank" rel="noopener">家训 ↗</a></h3>
+          <p>是长辈对子孙立身处世、持家治业的教诲与训诫。或寥寥数语悬于中堂，或洋洋万言著成家书，凝聚着前人最珍贵的人生智慧。</p>
+        </div>
+        <div class="intro-card">
+          <div class="intro-icon">🌱</div>
+          <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%AE%B6%E9%A3%8E%E5%BB%BA%E8%AE%BE" target="_blank" rel="noopener">传承 ↗</a></h3>
+          <p>"天下之本在国，国之本在家。"好家风好家训不仅滋养一个家庭，更汇入整个民族的精神长河，是社会主义核心价值观的深厚土壤。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家训名言 -->
+  <section class="section section-alt" id="motto">
+    <div class="container">
+      <h2 class="section-title">家训名言</h2>
+      <p class="section-sub">Classic Mottos</p>
+      <div class="motto-grid">
+        <div class="motto-card">
+          <p class="motto-text">一粥一饭，当思来处不易；半丝半缕，恒念物力维艰。</p>
+          <p class="motto-from">—— 朱柏庐 <a class="baike-link" href="https://baike.baidu.com/item/%E6%9C%B1%E5%AD%90%E5%AE%B6%E8%AE%AD/2423407" target="_blank" rel="noopener">《朱子家训》↗</a></p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">积善之家，必有余庆；积不善之家，必有余殃。</p>
+          <p class="motto-from">—— <a class="baike-link" href="https://baike.baidu.com/item/%E5%91%A8%E6%98%93" target="_blank" rel="noopener">《周易·坤卦》↗</a></p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">夫君子之行，静以修身，俭以养德。非淡泊无以明志，非宁静无以致远。</p>
+          <p class="motto-from">—— 诸葛亮 <a class="baike-link" href="https://baike.baidu.com/item/%E8%AF%94%E5%AD%90%E4%B9%A6" target="_blank" rel="noopener">《诫子书》↗</a></p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">玉不琢，不成器；人不学，不知道。</p>
+          <p class="motto-from">—— <a class="baike-link" href="https://baike.baidu.com/item/%E7%A4%BC%E8%AE%B0" target="_blank" rel="noopener">《礼记·学记》↗</a></p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">由俭入奢易，由奢入俭难。</p>
+          <p class="motto-from">—— 司马光 <a class="baike-link" href="https://baike.baidu.com/item/%E8%AE%AD%E4%BF%AD%E7%A4%BA%E5%BA%B7" target="_blank" rel="noopener">《训俭示康》↗</a></p>
+        </div>
+        <div class="motto-card">
+          <p class="motto-text">子孙若如我，留钱做什么？子孙不如我，留钱做什么？</p>
+          <p class="motto-from">—— <a class="baike-link" href="https://baike.baidu.com/item/%E6%9E%97%E5%88%99%E5%BE%90" target="_blank" rel="noopener">林则徐家训 ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 名人家训（标签页） -->
+  <section class="section" id="classic">
+    <div class="container">
+      <h2 class="section-title">名人家训</h2>
+      <p class="section-sub">Famous Family Instructions</p>
+      <div class="tabs" id="tabs">
+        <div class="tab-btns" id="tabBtns">
+          <button class="tab-btn active" data-tab="0">颜氏家训</button>
+          <button class="tab-btn" data-tab="1">朱子家训</button>
+          <button class="tab-btn" data-tab="2">曾国藩家书</button>
+          <button class="tab-btn" data-tab="3">钱氏家训</button>
+          <button class="tab-btn" data-tab="4">傅雷家书</button>
+        </div>
+        <div class="tab-panels" id="tabPanels"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家风典故 -->
+  <section class="section section-alt" id="stories">
+    <div class="container">
+      <h2 class="section-title">家风典故</h2>
+      <p class="section-sub">Timeless Stories</p>
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-cover story-c1">孟</div>
+          <div class="story-info">
+            <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%AD%9F%E6%AF%8D%E4%B8%89%E8%BF%81" target="_blank" rel="noopener">孟母三迁 ↗</a></h3>
+            <p>孟子幼时，孟母为择良邻三迁其居。"近朱者赤，近墨者黑"，环境育人，用心良苦，终成就一代亚圣。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c2">猪</div>
+          <div class="story-info">
+            <h3><a class="baike-link" href="https://baike.baidu.com/item/%E6%9B%BE%E5%AD%90%E6%9D%80%E7%8C%AA" target="_blank" rel="noopener">曾子杀猪 ↗</a></h3>
+            <p>妻子随口哄孩子"回来杀猪给你吃"，曾子果真杀猪践诺。言出必行，身教重于言教，诚信之训由此立。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c3">字</div>
+          <div class="story-info">
+            <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%B2%B3%E6%AF%8D%E5%88%BA%E5%AD%97" target="_blank" rel="noopener">岳母刺字 ↗</a></h3>
+            <p>岳母在岳飞背上刺"精忠报国"四字，把家国之训刻进骨血。一腔忠勇，千古流芳。</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-cover story-c4">俭</div>
+          <div class="story-info">
+            <h3><a class="baike-link" href="https://baike.baidu.com/item/%E5%8F%B8%E9%A9%AC%E5%85%89" target="_blank" rel="noopener">司马光教子节俭 ↗</a></h3>
+            <p>司马光写下《训俭示康》告诫儿子："由俭入奢易，由奢入俭难。"司马康谨守父训，一生以清廉闻名。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家风影像（在线视频） -->
+  <section class="section" id="video">
+    <div class="container">
+      <h2 class="section-title">家风影像</h2>
+      <p class="section-sub">Family Videos</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrap">
+            <!--
+              换成自己的视频：把下面 source 的 src 换成视频文件地址
+              （可以是网上 .mp4 链接，或与网页同目录的本地视频文件）
+            -->
+            <video controls preload="metadata"
+              src="https://www.w3schools.com/html/mov_bbb.mp4">
+              您的浏览器不支持视频播放
+            </video>
+          </div>
+          <div class="video-info">
+            <h3>在线视频 · 直接播放</h3>
+            <p>支持所有常见格式的在线 / 本地 MP4 视频。</p>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-wrap">
+            <!--
+              换成自己的B站视频：在B站视频页点「分享 → 嵌入代码」，
+              复制其中的 BV 号替换下面链接里的 bvid=BV1GJ411x7h7 即可
+            -->
+            <iframe src="https://player.bilibili.com/player.html?bvid=BV1GJ411x7h7&page=1&high_quality=1&danmaku=0&autoplay=0"
+              scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>B站视频 · 嵌入播放</h3>
+            <p>替换 BV 号即可嵌入任意B站视频，自动适配清晰度。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日家训（互动） -->
+  <section class="section" id="daily">
+    <div class="container">
+      <h2 class="section-title">每日家训</h2>
+      <p class="section-sub">Daily Precept</p>
+      <div class="daily-box">
+        <div class="daily-card" id="dailyCard">
+          <p class="daily-text" id="dailyText">点击下方按钮，抽取一句今日家训</p>
+          <p class="daily-from" id="dailyFrom">—— 好 · 家 · 风</p>
+        </div>
+        <button class="btn btn-primary" id="drawBtn">抽一句家训</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家风长廊（滚动字幕） -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>一粥一饭，当思来处不易</span><i>✦</i>
+      <span>静以修身，俭以养德</span><i>✦</i>
+      <span>积善之家，必有余庆</span><i>✦</i>
+      <span>孝悌也者，其为仁之本与</span><i>✦</i>
+      <span>言必信，行必果</span><i>✦</i>
+      <span>忠厚传家久，诗书继世长</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- 结语 -->
+  <section class="section section-alt" id="ending">
+    <div class="container ending-inner">
+      <h2>家风如春雨，润物细无声</h2>
+      <p>
+        一句家训，可以照亮一个孩子的一生；一户好家风，可以影响一座村庄、一所学校、一个时代。<br />
+        愿每一个家庭都把最珍贵的东西传下去——不是财富，而是品格；不是遗产，而是家风。
+      </p>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-slogan">家风正，则民风淳；民风淳，则社风清。</p>
+      <p>好家风好家训 · 传承中华优秀家庭文化</p>
+      <p>© 2026 · 26级计算机科学专升本2班聂宇</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

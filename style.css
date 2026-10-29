@@ -1,0 +1,708 @@
+/* ============ 基础与主题变量 ============ */
+:root {
+  --red: #b93a32;
+  --red-deep: #8f2b25;
+  --gold: #c9a063;         /* 深色背景上的描金 */
+  --gold-dark: #9a7534;    /* 浅色背景上的文字金 */
+  --ink: #2b2320;
+  --paper: #faf6ef;
+  --paper-alt: #f3ecdd;
+  --text: #33291f;
+  --text-light: #57503f;   /* 加深后的次要文字，更易读 */
+  --shadow: 0 8px 24px rgba(143, 43, 37, 0.10);
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", "Microsoft YaHei", serif;
+  background: var(--paper);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* ============ 导航 ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201, 160, 99, 0.35);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--red-deep);
+}
+
+.logo-seal {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.35);
+}
+
+.nav-links { display: flex; gap: 26px; font-size: 15px; }
+
+.nav-links a {
+  position: relative;
+  padding: 4px 0;
+  transition: color .25s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--red);
+  transition: width .25s;
+}
+
+.nav-links a:hover { color: var(--red); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--red-deep);
+  cursor: pointer;
+}
+
+/* ============ 首屏 ============ */
+.hero {
+  position: relative;
+  padding: 110px 0 90px;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201,160,99,.18), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(185,58,50,.12), transparent 45%),
+    linear-gradient(180deg, #fdfaf3 0%, var(--paper) 100%);
+}
+
+.hero-deco {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .55;
+}
+
+.deco-1 {
+  width: 260px; height: 260px;
+  border: 2px solid rgba(185,58,50,.25);
+  top: -70px; left: -70px;
+}
+
+.deco-2 {
+  width: 340px; height: 340px;
+  border: 2px dashed rgba(201,160,99,.5);
+  bottom: -120px; right: -100px;
+}
+
+.hero-sub {
+  letter-spacing: 8px;
+  color: var(--gold-dark);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-size: clamp(38px, 7vw, 68px);
+  color: var(--red-deep);
+  letter-spacing: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  max-width: 680px;
+  margin: 0 auto 36px;
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 46px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 34px;
+  border-radius: 999px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: transform .25s, box-shadow .25s, background .25s, color .25s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(143,43,37,.30);
+}
+
+.btn-primary:hover { transform: translateY(-3px); }
+
+.btn-ghost {
+  border: 1.5px solid var(--red);
+  color: var(--red);
+  background: transparent;
+}
+
+.btn-ghost:hover { background: var(--red); color: #fff; transform: translateY(-3px); }
+
+.hero-slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  color: var(--red-deep);
+  letter-spacing: 6px;
+}
+
+.hero-slogan i {
+  width: 70px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transition: opacity .5s;
+}
+
+/* ============ 通用区块 ============ */
+.section { padding: 80px 0; }
+.section-alt { background: var(--paper-alt); }
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  color: var(--ink);
+  letter-spacing: 4px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 56px; height: 3px;
+  background: var(--red);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--gold-dark);
+  letter-spacing: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 0 46px;
+  text-transform: uppercase;
+}
+
+/* ============ 何谓家风家训 ============ */
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.intro-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 34px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 3px solid transparent;
+  transition: transform .3s, border-color .3s;
+}
+
+.intro-card:hover { transform: translateY(-6px); border-top-color: var(--red); }
+
+.intro-icon { font-size: 38px; margin-bottom: 12px; }
+
+.intro-card h3 {
+  color: var(--red-deep);
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+.intro-card p { color: var(--text-light); font-size: 15px; text-align: justify; }
+
+/* ============ 家训名言 ============ */
+.motto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.motto-card {
+  position: relative;
+  background: linear-gradient(160deg, #fff 60%, #fdf3e7);
+  border: 1px solid rgba(201,160,99,.4);
+  border-radius: var(--radius);
+  padding: 30px 26px 24px;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.motto-card::before {
+  content: "「";
+  position: absolute;
+  top: 8px; left: 14px;
+  font-size: 34px;
+  color: rgba(185,58,50,.18);
+  line-height: 1;
+}
+
+.motto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(143,43,37,.16);
+}
+
+.motto-text {
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.motto-from {
+  text-align: right;
+  font-size: 13px;
+  color: var(--red);
+  letter-spacing: 1px;
+}
+
+/* ============ 名人家训（标签页） ============ */
+.tabs { max-width: 860px; margin: 0 auto; }
+
+.tab-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tab-btn {
+  padding: 9px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(185,58,50,.4);
+  background: transparent;
+  color: var(--red-deep);
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all .25s;
+}
+
+.tab-btn.active,
+.tab-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+.tab-panel {
+  display: none;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 38px 34px;
+  box-shadow: var(--shadow);
+  animation: fadeUp .45s both;
+}
+
+.tab-panel.active { display: block; }
+
+.tab-panel h3 {
+  color: var(--red-deep);
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.tab-author {
+  color: var(--gold-dark);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.tab-panel blockquote {
+  border-left: 3px solid var(--red);
+  background: var(--paper);
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  color: var(--ink);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.tab-panel p { color: var(--text-light); font-size: 15px; text-align: justify; }
+
+/* ============ 家风典故 ============ */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(143,43,37,.18);
+}
+
+.story-cover {
+  height: 130px;
+  display: grid;
+  place-items: center;
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.story-c1 { background: linear-gradient(135deg, #b93a32, #8f2b25); }
+.story-c2 { background: linear-gradient(135deg, #2e5d4f, #1f4238); }
+.story-c3 { background: linear-gradient(135deg, #b07b3f, #8a5a26); }
+.story-c4 { background: linear-gradient(135deg, #4a4a6a, #33334d); }
+
+.story-info { padding: 18px 20px 22px; }
+
+.story-info h3 {
+  color: var(--ink);
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.story-info p { font-size: 14px; color: var(--text-light); text-align: justify; }
+
+/* ============ 家风影像（视频） ============ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(143,43,37,.18);
+}
+
+.video-wrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+}
+
+.video-wrap video,
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.video-info { padding: 18px 20px 22px; }
+
+.video-info h3 {
+  color: var(--ink);
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.video-info p { font-size: 14px; color: var(--text-light); }
+
+.video-info code {
+  background: var(--paper-alt);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--red-deep);
+}
+
+/* ============ 每日家训 ============ */
+.daily-box { max-width: 680px; margin: 0 auto; text-align: center; }
+
+.daily-card {
+  background: linear-gradient(160deg, #fff, #fdf3e7);
+  border: 1px solid rgba(201,160,99,.5);
+  border-radius: var(--radius);
+  padding: 46px 36px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow);
+  min-height: 190px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  transition: transform .3s;
+}
+
+.daily-card.flip { animation: flipIn .55s both; }
+
+@keyframes flipIn {
+  from { opacity: 0; transform: rotateX(60deg) scale(.94); }
+  to   { opacity: 1; transform: rotateX(0) scale(1); }
+}
+
+.daily-text {
+  font-size: 21px;
+  color: var(--ink);
+  letter-spacing: 1px;
+}
+
+.daily-from { color: var(--red); font-size: 14px; letter-spacing: 2px; }
+
+/* ============ 结语 ============ */
+.ending-inner {
+  text-align: center;
+  max-width: 720px;
+}
+
+.ending-inner h2 {
+  color: var(--red-deep);
+  font-size: 26px;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+
+.ending-inner p { color: var(--text-light); font-size: 16px; }
+
+/* ============ 页脚 ============ */
+.footer {
+  background: var(--ink);
+  color: rgba(255,255,255,.75);
+  text-align: center;
+  padding: 46px 0 38px;
+  font-size: 14px;
+}
+
+.footer-slogan {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.footer p { margin-bottom: 6px; }
+
+/* ============ 回到顶部 ============ */
+.back-top {
+  position: fixed;
+  right: 26px;
+  bottom: 30px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--red);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: all .3s;
+  box-shadow: 0 8px 18px rgba(143,43,37,.35);
+  z-index: 99;
+}
+
+.back-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* ============ 百科超链接 ============ */
+.baike-link {
+  color: inherit;
+  border-bottom: 1px dashed transparent;
+  transition: color .25s, border-color .25s;
+}
+
+.baike-link:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.tab-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--red);
+  letter-spacing: 1px;
+}
+
+/* ============ 飘落花瓣画布 ============ */
+#petals {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.navbar, .hero, .section, .footer, .marquee { position: relative; z-index: 2; }
+
+/* ============ 数字动态统计 ============ */
+.stats-section {
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item {
+  color: #fff;
+  padding: 18px 10px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.08);
+  transition: transform .3s, background .3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,.15);
+}
+
+.stat-num {
+  font-size: 46px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.stat-unit { font-size: 16px; opacity: .85; margin-left: 4px; }
+
+.stat-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: .85;
+  letter-spacing: 1px;
+}
+
+/* ============ 家风长廊（滚动字幕） ============ */
+.marquee {
+  background: var(--ink);
+  padding: 18px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(201,160,99,.4);
+  border-bottom: 1px solid rgba(201,160,99,.4);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-track span {
+  color: var(--gold);
+  font-size: 17px;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.marquee-track i {
+  color: rgba(201,160,99,.5);
+  font-style: normal;
+  font-size: 12px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============ 滚动进场动画 ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ 响应式 ============ */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0; right: 0;
+    background: var(--paper);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid rgba(201,160,99,.4);
+    display: none;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    border-top: 1px solid rgba(201,160,99,.2);
+  }
+
+  .nav-toggle { display: block; }
+
+  .hero { padding: 70px 0 60px; }
+  .section { padding: 56px 0; }
+  .tab-panel { padding: 28px 22px; }
+}
